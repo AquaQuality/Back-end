@@ -11,6 +11,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -33,6 +34,7 @@ public class Usuario {
 	private String usuario;
 	
 	@NotBlank(message = "O campo é obrigatorio ! ")
+	@Size(min=8, message = "A senha deve ter no minimo 8 caracteres")		
 	private String senha;
 	
 	private String foto;
